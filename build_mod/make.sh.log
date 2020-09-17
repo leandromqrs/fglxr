@@ -1,0 +1,654 @@
+AMD kernel module generator version 2.1
+.
+Active kernel:
+uname -a = Linux desktop 5.8.9-arch2-1 #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000 x86_64 GNU/Linux
+uname -s = Linux
+uname -m = x86_64
+uname -r = 5.8.9-arch2-1
+uname -v = #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000
+.
+Target kernel:
+uname -a = Linux desktop 5.8.9-arch2-1 #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000 x86_64 GNU/Linux
+uname -s = Linux
+uname -m = x86_64
+uname -r = 5.8.9-arch2-1
+uname -v = #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000
+.
+OsVersion says: SMP=1
+file /proc/kallsyms says: SMP=1
+file /lib/modules/5.8.9-arch2-1/build/include/generated/autoconf.h says: SMP=1
+file /lib/modules/5.8.9-arch2-1/build/include/generated/autoconf.h says: MODVERSIONS=
+file /lib/modules/5.8.9-arch2-1/build/arch/x86/include/asm/compat.h says: COMPAT_ALLOC_USER_SPACE=arch_compat_alloc_user_space
+.
+doing Makefile based build for kernel 2.6.x and higher
+make -C /lib/modules/5.8.9-arch2-1/build M=/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x
+make[1]: Entrando no diretório '/usr/lib/modules/5.8.9-arch2-1/build'
+
+  AR      /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:41,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:507:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h: In function ‘FGLDRM__bufs_info’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drmP.h:221:4: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  221 |    len += sprintf(&buf[len], fmt , ##arg);    \
+      |    ^~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:391:4: note: in expansion of macro ‘DRM_PROC_PRINT’
+  391 |    DRM_PROC_PRINT("%2d %8d %5d %5d %5d %5d %5ld\n",
+      |    ^~~~~~~~~~~~~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:507:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:390:3: note: some parts of macro expansion are not guarded by this ‘if’ clause
+  390 |   if (dma->bufs[i].buf_count)
+      |   ^~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:41,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:507:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drmP.h:221:4: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  221 |    len += sprintf(&buf[len], fmt , ##arg);    \
+      |    ^~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:406:21: note: in expansion of macro ‘DRM_PROC_PRINT’
+  406 |   if (i && !(i%32)) DRM_PROC_PRINT("\n");
+      |                     ^~~~~~~~~~~~~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:507:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:406:3: note: some parts of macro expansion are not guarded by this ‘if’ clause
+  406 |   if (i && !(i%32)) DRM_PROC_PRINT("\n");
+      |   ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘firegl_major_proc_read’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:632:9: error: void value not ignored as it ought to be
+  632 |     len = seq_printf(m, "%d\n", major);
+      |         ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_SetPageCache’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1589:16: error: implicit declaration of function ‘set_memory_wb’ [-Werror=implicit-function-declaration]
+ 1589 |         return set_memory_wb((unsigned long)pt, pages);
+      |                ^~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1593:16: error: implicit declaration of function ‘set_memory_uc’ [-Werror=implicit-function-declaration]
+ 1593 |         return set_memory_uc((unsigned long)pt, pages);
+      |                ^~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_SetPageCache_Array’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1625:15: error: implicit declaration of function ‘set_memory_array_wb’ [-Werror=implicit-function-declaration]
+ 1625 |         ret = set_memory_array_wb(pPageList, lowPageCount);
+      |               ^~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1629:15: error: implicit declaration of function ‘set_memory_array_uc’ [-Werror=implicit-function-declaration]
+ 1629 |         ret = set_memory_array_uc(pPageList, lowPageCount);
+      |               ^~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl__cmpxchg’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1751:12: error: implicit declaration of function ‘__fgl_cmpxchg’; did you mean ‘__xa_cmpxchg’? [-Werror=implicit-function-declaration]
+ 1751 |     return __fgl_cmpxchg(ptr,old,new,size);
+      |            ^~~~~~~~~~~~~
+      |            __xa_cmpxchg
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_DelayInMicroSeconds’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1840:21: error: storage size of ‘tval’ isn’t known
+ 1840 |     struct timespec tval;
+      |                     ^~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1855:23: error: implicit declaration of function ‘timespec_to_jiffies’; did you mean ‘timespec64_to_jiffies’? [-Werror=implicit-function-declaration]
+ 1855 |         wait_period = timespec_to_jiffies(&tval);
+      |                       ^~~~~~~~~~~~~~~~~~~
+      |                       timespec64_to_jiffies
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1840:21: warning: unused variable ‘tval’ [-Wunused-variable]
+ 1840 |     struct timespec tval;
+      |                     ^~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_AllocAtomic’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2346:12: error: too many arguments to function ‘__vmalloc’
+ 2346 |     return __vmalloc(size, GFP_ATOMIC, PAGE_KERNEL);
+      |            ^~~~~~~~~
+In file included from ./include/asm-generic/io.h:911,
+                 from ./arch/x86/include/asm/io.h:375,
+                 from ./include/linux/io.h:13,
+                 from ./include/linux/pci.h:39,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/vmalloc.h:111:14: note: declared here
+  111 | extern void *__vmalloc(unsigned long size, gfp_t gfp_mask);
+      |              ^~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_AllocLinearAddrInterval’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2443:13: error: ‘MAP_SHARED’ undeclared (first use in this function); did you mean ‘VM_SHARED’?
+ 2443 |     flags = MAP_SHARED;
+      |             ^~~~~~~~~~
+      |             VM_SHARED
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2443:13: note: each undeclared identifier is reported only once for each function it appears in
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_VerifyReadAccess’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2725:45: error: macro "access_ok" passou 3 argumentos, mas usa apenas 2
+ 2725 |     return access_ok(VERIFY_READ, addr, size) ? 0 : -EFAULT;
+      |                                             ^
+In file included from ./include/linux/uaccess.h:11,
+                 from ./include/linux/sched/task.h:11,
+                 from ./include/linux/sched/signal.h:9,
+                 from ./include/linux/rcuwait.h:6,
+                 from ./include/linux/percpu-rwsem.h:7,
+                 from ./include/linux/fs.h:33,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:113:
+./arch/x86/include/asm/uaccess.h:93: note: macro "access_ok" defined here
+   93 | #define access_ok(addr, size)     \
+      | 
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2725:12: error: ‘access_ok’ undeclared (first use in this function)
+ 2725 |     return access_ok(VERIFY_READ, addr, size) ? 0 : -EFAULT;
+      |            ^~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_VerifyWriteAccess’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2730:46: error: macro "access_ok" passou 3 argumentos, mas usa apenas 2
+ 2730 |     return access_ok(VERIFY_WRITE, addr, size) ? 0 : -EFAULT;
+      |                                              ^
+In file included from ./include/linux/uaccess.h:11,
+                 from ./include/linux/sched/task.h:11,
+                 from ./include/linux/sched/signal.h:9,
+                 from ./include/linux/rcuwait.h:6,
+                 from ./include/linux/percpu-rwsem.h:7,
+                 from ./include/linux/fs.h:33,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:113:
+./arch/x86/include/asm/uaccess.h:93: note: macro "access_ok" defined here
+   93 | #define access_ok(addr, size)     \
+      | 
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2730:12: error: ‘access_ok’ undeclared (first use in this function)
+ 2730 |     return access_ok(VERIFY_WRITE, addr, size) ? 0 : -EFAULT;
+      |            ^~~~~~~~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_GetInitKerPte’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2754:23: error: passing argument 1 of ‘pud_offset’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 2754 |     PUD_OFFSET(pud_p, pgd_p, address);
+      |                       ^~~~~
+      |                       |
+      |                       pgd_t *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:106:24: note: in definition of macro ‘PUD_OFFSET’
+  106 |     pud_p = pud_offset(pgd_p, pte_linear); \
+      |                        ^~~~~
+In file included from ./include/linux/mm.h:32,
+                 from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/pgtable.h:97:40: note: expected ‘p4d_t *’ but argument is of type ‘pgd_t *’
+   97 | static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+      |                                 ~~~~~~~^~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_GetPageTableByVirtAddr’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2823:23: error: passing argument 1 of ‘pud_offset’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 2823 |     PUD_OFFSET(pud_p, pgd_p, virtual_addr);
+      |                       ^~~~~
+      |                       |
+      |                       pgd_t *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:106:24: note: in definition of macro ‘PUD_OFFSET’
+  106 |     pud_p = pud_offset(pgd_p, pte_linear); \
+      |                        ^~~~~
+In file included from ./include/linux/mm.h:32,
+                 from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/pgtable.h:97:40: note: expected ‘p4d_t *’ but argument is of type ‘pgd_t *’
+   97 | static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+      |                                 ~~~~~~~^~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_GetPageSizeByVirtAddr’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2892:23: error: passing argument 1 of ‘pud_offset’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 2892 |     PUD_OFFSET(pud_p, pgd_p, virtual_addr);
+      |                       ^~~~~
+      |                       |
+      |                       pgd_t *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:106:24: note: in definition of macro ‘PUD_OFFSET’
+  106 |     pud_p = pud_offset(pgd_p, pte_linear); \
+      |                        ^~~~~
+In file included from ./include/linux/mm.h:32,
+                 from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/pgtable.h:97:40: note: expected ‘p4d_t *’ but argument is of type ‘pgd_t *’
+   97 | static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+      |                                 ~~~~~~~^~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_flush_tlb_one’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2946:5: error: implicit declaration of function ‘__flush_tlb_one’; did you mean ‘kcl_flush_tlb_one’? [-Werror=implicit-function-declaration]
+ 2946 |     __flush_tlb_one(*addr);
+      |     ^~~~~~~~~~~~~~~
+      |     kcl_flush_tlb_one
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_TestAndClearPageDirtyFlag’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3123:28: error: passing argument 1 of ‘pud_offset’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 3123 |          PUD_OFFSET(pud_p, pgd_p, page_addr);
+      |                            ^~~~~
+      |                            |
+      |                            pgd_t *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:106:24: note: in definition of macro ‘PUD_OFFSET’
+  106 |     pud_p = pud_offset(pgd_p, pte_linear); \
+      |                        ^~~~~
+In file included from ./include/linux/mm.h:32,
+                 from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/pgtable.h:97:40: note: expected ‘p4d_t *’ but argument is of type ‘pgd_t *’
+   97 | static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+      |                                 ~~~~~~~^~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_LockUserPages’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3216:29: error: ‘struct mm_struct’ has no member named ‘mmap_sem’; did you mean ‘mmap_base’?
+ 3216 |     down_read(&current->mm->mmap_sem);
+      |                             ^~~~~~~~
+      |                             mmap_base
+In file included from ./include/linux/thread_info.h:21,
+                 from ./arch/x86/include/asm/preempt.h:7,
+                 from ./include/linux/preempt.h:78,
+                 from ./include/linux/spinlock.h:51,
+                 from ./include/linux/seqlock.h:36,
+                 from ./include/linux/time.h:6,
+                 from ./include/linux/stat.h:19,
+                 from ./include/linux/module.h:13,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./arch/x86/include/asm/current.h:18:17: warning: passing argument 1 of ‘get_user_pages’ makes integer from pointer without a cast [-Wint-conversion]
+   18 | #define current get_current()
+      |                 ^~~~~~~~~~~~~
+      |                 |
+      |                 struct task_struct *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3217:26: note: in expansion of macro ‘current’
+ 3217 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
+      |                          ^~~~~~~
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:35: note: expected ‘long unsigned int’ but argument is of type ‘struct task_struct *’
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |                     ~~~~~~~~~~~~~~^~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3217:42: warning: passing argument 2 of ‘get_user_pages’ makes integer from pointer without a cast [-Wint-conversion]
+ 3217 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:56: note: expected ‘long unsigned int’ but argument is of type ‘struct mm_struct *’
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |                                          ~~~~~~~~~~~~~~^~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3217:55: warning: passing argument 4 of ‘get_user_pages’ makes pointer from integer without a cast [-Wint-conversion]
+ 3217 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
+      |                                                       ^~~~~~~~
+      |                                                       |
+      |                                                       unsigned int
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1703:46: note: expected ‘struct page **’ but argument is of type ‘unsigned int’
+ 1703 |        unsigned int gup_flags, struct page **pages,
+      |                                ~~~~~~~~~~~~~~^~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3217:65: warning: passing argument 5 of ‘get_user_pages’ makes pointer from integer without a cast [-Wint-conversion]
+ 3217 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
+      |                                                                 ^
+      |                                                                 |
+      |                                                                 int
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1704:32: note: expected ‘struct vm_area_struct **’ but argument is of type ‘int’
+ 1704 |        struct vm_area_struct **vmas);
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3217:11: error: too many arguments to function ‘get_user_pages’
+ 3217 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
+      |           ^~~~~~~~~~~~~~
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:6: note: declared here
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |      ^~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3218:27: error: ‘struct mm_struct’ has no member named ‘mmap_sem’; did you mean ‘mmap_base’?
+ 3218 |     up_read(&current->mm->mmap_sem);
+      |                           ^~~~~~~~
+      |                           mmap_base
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_LockReadOnlyUserPages’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3234:29: error: ‘struct mm_struct’ has no member named ‘mmap_sem’; did you mean ‘mmap_base’?
+ 3234 |     down_read(&current->mm->mmap_sem);
+      |                             ^~~~~~~~
+      |                             mmap_base
+In file included from ./include/linux/thread_info.h:21,
+                 from ./arch/x86/include/asm/preempt.h:7,
+                 from ./include/linux/preempt.h:78,
+                 from ./include/linux/spinlock.h:51,
+                 from ./include/linux/seqlock.h:36,
+                 from ./include/linux/time.h:6,
+                 from ./include/linux/stat.h:19,
+                 from ./include/linux/module.h:13,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./arch/x86/include/asm/current.h:18:17: warning: passing argument 1 of ‘get_user_pages’ makes integer from pointer without a cast [-Wint-conversion]
+   18 | #define current get_current()
+      |                 ^~~~~~~~~~~~~
+      |                 |
+      |                 struct task_struct *
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3235:26: note: in expansion of macro ‘current’
+ 3235 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 0, 0, (struct page **)page_list, NULL);
+      |                          ^~~~~~~
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:35: note: expected ‘long unsigned int’ but argument is of type ‘struct task_struct *’
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |                     ~~~~~~~~~~~~~~^~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3235:42: warning: passing argument 2 of ‘get_user_pages’ makes integer from pointer without a cast [-Wint-conversion]
+ 3235 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 0, 0, (struct page **)page_list, NULL);
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:56: note: expected ‘long unsigned int’ but argument is of type ‘struct mm_struct *’
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |                                          ~~~~~~~~~~~~~~^~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3235:55: warning: passing argument 4 of ‘get_user_pages’ makes pointer from integer without a cast [-Wint-conversion]
+ 3235 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 0, 0, (struct page **)page_list, NULL);
+      |                                                       ^~~~~~~~
+      |                                                       |
+      |                                                       unsigned int
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1703:46: note: expected ‘struct page **’ but argument is of type ‘unsigned int’
+ 1703 |        unsigned int gup_flags, struct page **pages,
+      |                                ~~~~~~~~~~~~~~^~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3235:11: error: too many arguments to function ‘get_user_pages’
+ 3235 |     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 0, 0, (struct page **)page_list, NULL);
+      |           ^~~~~~~~~~~~~~
+In file included from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/mm.h:1702:6: note: declared here
+ 1702 | long get_user_pages(unsigned long start, unsigned long nr_pages,
+      |      ^~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3236:27: error: ‘struct mm_struct’ has no member named ‘mmap_sem’; did you mean ‘mmap_base’?
+ 3236 |     up_read(&current->mm->mmap_sem);
+      |                           ^~~~~~~~
+      |                           mmap_base
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_UnlockUserPages’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3246:9: error: implicit declaration of function ‘page_cache_release’; did you mean ‘pagecache_get_page’? [-Werror=implicit-function-declaration]
+ 3246 |         page_cache_release((struct page*)page_list[i]);
+      |         ^~~~~~~~~~~~~~~~~~
+      |         pagecache_get_page
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_FlushCpuCaches’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3352:58: error: void value not ignored as it ought to be
+ 3352 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3361:6: note: in expansion of macro ‘KCL_SmpCallFunction’
+ 3361 |  if (KCL_SmpCallFunction(deferred_flush, NULL, 1, 0) != 0)
+      |      ^~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘do_vm_shm_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3596:49: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 3596 |     unsigned long address = (unsigned long) (vmf->virtual_address);
+      |                                                 ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘do_vm_dma_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3671:49: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 3671 |     unsigned long address = (unsigned long) (vmf->virtual_address);
+      |                                                 ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘do_vm_kmap_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3716:49: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 3716 |     unsigned long address = (unsigned long) (vmf->virtual_address);
+      |                                                 ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘do_vm_pcie_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3779:49: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 3779 |     unsigned long address = (unsigned long) (vmf->virtual_address);
+      |                                                 ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘do_vm_gart_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3841:49: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 3841 |     unsigned long address = (unsigned long) (vmf->virtual_address);
+      |                                                 ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_VM_GetRegionPhysAddrStr’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4041:24: error: passing argument 1 of ‘pud_offset’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 4041 |     pud_p = pud_offset(pgd_p, virtual_addr);
+      |                        ^~~~~
+      |                        |
+      |                        pgd_t *
+In file included from ./include/linux/mm.h:32,
+                 from ./include/linux/scatterlist.h:8,
+                 from ./include/linux/dmapool.h:14,
+                 from ./include/linux/pci.h:1439,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:117:
+./include/linux/pgtable.h:97:40: note: expected ‘p4d_t *’ but argument is of type ‘pgd_t *’
+   97 | static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+      |                                 ~~~~~~~^~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:208:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4144:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4144 |     TRACE_FAULT(do_vm_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_shm_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4149:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4149 |     TRACE_FAULT(do_vm_shm_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_dma_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4154:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4154 |     TRACE_FAULT(do_vm_dma_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_kmap_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4159:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4159 |     TRACE_FAULT(do_vm_kmap_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_pcie_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4164:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4164 |     TRACE_FAULT(do_vm_pcie_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘ip_vm_gart_fault’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4137:54: error: ‘struct vm_fault’ has no member named ‘virtual_address’
+ 4137 |    KCL_DEBUG_TRACEIN(FN_DRM_NOPAGE, (unsigned long)_a->virtual_address, NULL); \
+      |                                                      ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.h:221:29: note: in definition of macro ‘KCL_DEBUG_TRACE’
+  221 |                      (long)(p),             \
+      |                             ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4169:5: note: in expansion of macro ‘TRACE_FAULT’
+ 4169 |     TRACE_FAULT(do_vm_gart_fault, vma, vmf);
+      |     ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: At top level:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4179:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4179 |     fault:   ip_vm_fault,
+      |              ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4179:14: note: (near initialization for ‘vm_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4190:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4190 |     fault:   ip_vm_shm_fault,
+      |              ^~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4190:14: note: (near initialization for ‘vm_shm_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4201:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4201 |     fault:   ip_vm_dma_fault,
+      |              ^~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4201:14: note: (near initialization for ‘vm_pci_bq_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4212:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4212 |     fault:   ip_vm_dma_fault,
+      |              ^~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4212:14: note: (near initialization for ‘vm_ctx_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4223:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4223 |     fault:   ip_vm_pcie_fault,
+      |              ^~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4223:14: note: (near initialization for ‘vm_pcie_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4234:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4234 |     fault:   ip_vm_kmap_fault,
+      |              ^~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4234:14: note: (near initialization for ‘vm_kmap_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4245:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4245 |     fault:   ip_vm_gart_fault,
+      |              ^~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4245:14: note: (near initialization for ‘vm_gart_ops.fault’)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4257:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_area_struct *, struct vm_fault *)’ [-Werror=incompatible-pointer-types]
+ 4257 |     fault:   ip_vm_fault,
+      |              ^~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4257:14: note: (near initialization for ‘vm_agp_bq_ops.fault’)
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_setup’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:654:47: error: passing argument 2 of ‘test_bit’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  654 | #define cpu_has_pge test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               __u32 (*)[20] {aka unsigned int (*)[20]}
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4517:9: note: in expansion of macro ‘cpu_has_pge’
+ 4517 |     if (cpu_has_pge)
+      |         ^~~~~~~~~~~
+In file included from ./arch/x86/include/asm/bitops.h:392,
+                 from ./include/linux/bitops.h:29,
+                 from ./include/linux/kernel.h:12,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/module.h:12,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./include/asm-generic/bitops/instrumented-non-atomic.h:108:68: note: expected ‘const volatile long unsigned int *’ but argument is of type ‘__u32 (*)[20]’ {aka ‘unsigned int (*)[20]’}
+  108 | static inline bool test_bit(long nr, const volatile unsigned long *addr)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4522:6: error: implicit declaration of function ‘__flush_tlb’; did you mean ‘__flush_tlb_all’? [-Werror=implicit-function-declaration]
+ 4522 |      __flush_tlb();
+      |      ^~~~~~~~~~~
+      |      __flush_tlb_all
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:654:47: error: passing argument 2 of ‘test_bit’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  654 | #define cpu_has_pge test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               __u32 (*)[20] {aka unsigned int (*)[20]}
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4531:9: note: in expansion of macro ‘cpu_has_pge’
+ 4531 |     if (cpu_has_pge)
+      |         ^~~~~~~~~~~
+In file included from ./arch/x86/include/asm/bitops.h:392,
+                 from ./include/linux/bitops.h:29,
+                 from ./include/linux/kernel.h:12,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/module.h:12,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./include/asm-generic/bitops/instrumented-non-atomic.h:108:68: note: expected ‘const volatile long unsigned int *’ but argument is of type ‘__u32 (*)[20]’ {aka ‘unsigned int (*)[20]’}
+  108 | static inline bool test_bit(long nr, const volatile unsigned long *addr)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_restore’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:654:47: error: passing argument 2 of ‘test_bit’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  654 | #define cpu_has_pge test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               __u32 (*)[20] {aka unsigned int (*)[20]}
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4558:9: note: in expansion of macro ‘cpu_has_pge’
+ 4558 |     if (cpu_has_pge)
+      |         ^~~~~~~~~~~
+In file included from ./arch/x86/include/asm/bitops.h:392,
+                 from ./include/linux/bitops.h:29,
+                 from ./include/linux/kernel.h:12,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/module.h:12,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./include/asm-generic/bitops/instrumented-non-atomic.h:108:68: note: expected ‘const volatile long unsigned int *’ but argument is of type ‘__u32 (*)[20]’ {aka ‘unsigned int (*)[20]’}
+  108 | static inline bool test_bit(long nr, const volatile unsigned long *addr)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:205:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h:654:47: error: passing argument 2 of ‘test_bit’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  654 | #define cpu_has_pge test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               __u32 (*)[20] {aka unsigned int (*)[20]}
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4571:9: note: in expansion of macro ‘cpu_has_pge’
+ 4571 |     if (cpu_has_pge)
+      |         ^~~~~~~~~~~
+In file included from ./arch/x86/include/asm/bitops.h:392,
+                 from ./include/linux/bitops.h:29,
+                 from ./include/linux/kernel.h:12,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/module.h:12,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+./include/asm-generic/bitops/instrumented-non-atomic.h:108:68: note: expected ‘const volatile long unsigned int *’ but argument is of type ‘__u32 (*)[20]’ {aka ‘unsigned int (*)[20]’}
+  108 | static inline bool test_bit(long nr, const volatile unsigned long *addr)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_enable’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3352:58: error: void value not ignored as it ought to be
+ 3352 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4644:13: note: in expansion of macro ‘KCL_SmpCallFunction’
+ 4644 |         if (KCL_SmpCallFunction (kcl_mem_pat_setup, NULL, 0, 1) != 0)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_disable’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3352:58: error: void value not ignored as it ought to be
+ 3352 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4680:13: note: in expansion of macro ‘KCL_SmpCallFunction’
+ 4680 |         if (KCL_SmpCallFunction (kcl_mem_pat_restore, NULL, 0, 1) != 0)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_fpu_save_init’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6449:7: error: implicit declaration of function ‘fpu_xsave’; did you mean ‘fpu__save’? [-Werror=implicit-function-declaration]
+ 6449 |       fpu_xsave(fpu);
+      |       ^~~~~~~~~
+      |       fpu__save
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6450:23: error: invalid type argument of ‘->’ (have ‘union fpregs_state’)
+ 6450 |       if (!(fpu->state->xsave.xsave_hdr.xstate_bv & XSTATE_FP))
+      |                       ^~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6450:53: error: ‘XSTATE_FP’ undeclared (first use in this function); did you mean ‘XSTATE_OP’?
+ 6450 |       if (!(fpu->state->xsave.xsave_hdr.xstate_bv & XSTATE_FP))
+      |                                                     ^~~~~~~~~
+      |                                                     XSTATE_OP
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6453:3: error: implicit declaration of function ‘fpu_fxsave’; did you mean ‘fpu__save’? [-Werror=implicit-function-declaration]
+ 6453 |   fpu_fxsave(fpu);
+      |   ^~~~~~~~~~
+      |   fpu__save
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6456:42: error: invalid type argument of ‘->’ (have ‘union fpregs_state’)
+ 6456 |                   : [fx] "=m" (fpu->state->fsave));
+      |                                          ^~
+In file included from ./include/linux/export.h:43,
+                 from ./include/linux/linkage.h:7,
+                 from ./include/linux/kernel.h:8,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/module.h:12,
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6460:27: error: invalid type argument of ‘->’ (have ‘union fpregs_state’)
+ 6460 |    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
+      |                           ^~
+./include/linux/compiler.h:78:42: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x) __builtin_expect(!!(x), 0)
+      |                                          ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6460:42: error: ‘X87_FSW_ES’ undeclared (first use in this function)
+ 6460 |    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
+      |                                          ^~~~~~~~~~
+./include/linux/compiler.h:78:42: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x) __builtin_expect(!!(x), 0)
+      |                                          ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_create_proc_entry’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6605:86: error: passing argument 4 of ‘proc_create_data’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 6605 |         ent = proc_create_data(name, access_mode, (struct proc_dir_entry *)root_dir, (struct file_operations*)fops, private_data);
+      |                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                      |
+      |                                                                                      struct file_operations *
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:114:
+./include/linux/proc_fs.h:104:13: note: expected ‘const struct proc_ops *’ but argument is of type ‘struct file_operations *’
+  104 |             const struct proc_ops *,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_VerifyReadAccess’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2726:1: warning: control reaches end of non-void function [-Wreturn-type]
+ 2726 | }
+      | ^
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_VerifyWriteAccess’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2731:1: warning: control reaches end of non-void function [-Wreturn-type]
+ 2731 | }
+      | ^
+At top level:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6444:12: warning: ‘KCL_fpu_save_init’ defined but not used [-Wunused-function]
+ 6444 | static int KCL_fpu_save_init(struct task_struct *tsk)
+      |            ^~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:281: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o] Erro 1
+make[1]: *** [Makefile:1756: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x] Erro 2
+make[1]: Saindo do diretório '/usr/lib/modules/5.8.9-arch2-1/build'
+
+make: *** [Makefile:88: kmod_build] Erro 2
+build failed with return value 2

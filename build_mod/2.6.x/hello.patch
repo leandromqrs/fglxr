@@ -1,0 +1,11 @@
+--- common/lib/modules/fglrx/build_mod/2.6.x/Makefile
++++ common/lib/modules/fglrx/build_mod/2.6.x/Makefile
+@@ -86,7 +86,7 @@
+ # default:: kmod_build
+ 
+ kmod_build:: $(fglrx-libs) $(fglrx-cfiles) $(fglrx-hdrs) $(drm-hdrs)
+-	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
++	$(MAKE) -C $(KDIR) M=$(PWD)
+ 
+ %.c:
+ 	@ln -s ../$@
