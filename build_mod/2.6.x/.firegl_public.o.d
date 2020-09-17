@@ -265,7 +265,8 @@ firegl_public.o: \
  include/linux/kthread.h arch/x86/include/uapi/asm/mman.h \
  include/uapi/asm-generic/mman.h include/uapi/asm-generic/mman-common.h \
  arch/x86/include/asm/tlbflush.h arch/x86/include/asm/invpcid.h \
- arch/x86/include/asm/pti.h arch/x86/include/asm/mtrr.h \
+ arch/x86/include/asm/pti.h arch/x86/include/asm/set_memory.h \
+ include/asm-generic/set_memory.h arch/x86/include/asm/mtrr.h \
  arch/x86/include/uapi/asm/mtrr.h include/linux/compat.h \
  include/linux/socket.h arch/x86/include/generated/uapi/asm/socket.h \
  include/uapi/asm-generic/socket.h \
@@ -309,6 +310,7 @@ firegl_public.o: \
  include/linux/elevator.h include/linux/hashtable.h include/linux/node.h \
  arch/x86/include/asm/fpu/internal.h arch/x86/include/asm/trace/fpu.h \
  include/linux/tracepoint.h include/trace/define_trace.h \
+ include/uapi/linux/mman.h \
  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.h \
  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_iommu.h \
  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_config.h \

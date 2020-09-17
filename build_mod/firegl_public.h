@@ -91,6 +91,23 @@ do { \
     } \
 } while(0)
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,12,0)
+#define P4D_OFFSET(p4d_p, pgd_p, pte_linear)  \
+do { \
+    p4d_p = p4d_offset(pgd_p, pte_linear); \
+} while(0)
+
+#define P4D_PRESENT(p4d_p) \
+do { \
+    if (!p4d_present(*(p4d_p))) \
+    { \
+        return PAGING_FAULT_SIGBUS_INT;   /* Something bad happened; generate SIGBUS */ \
+        /* alternatively we could generate a NOPAGE_OOM "out of memory" */ \
+    } \
+} while(0)
+
+#endif // LINUX_VERSION_CODE >= KERNEL_VERSION(4,12,0)
+
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,11)
 #define PUD_PRESENT(pud_p) \
 do { \
@@ -650,8 +667,14 @@ extern unsigned long        KCL_SYSINFO_TimerTicksPerSecond;
 #define cpu_has_pat  test_bit(X86_FEATURE_PAT, (void *) &boot_cpu_data.x86_capability)
 #endif
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,7,0)
+#ifndef boot_cpu_has
+#define boot_cpu_has(X86_FEATURE_PGE) test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+#endif
+#else
 #ifndef cpu_has_pge
 #define cpu_has_pge test_bit(X86_FEATURE_PGE, &boot_cpu_data.x86_capability)
+#endif
 #endif
 
 /* 2.6.29 defines pgprot_writecombine as a macro which resolves to a

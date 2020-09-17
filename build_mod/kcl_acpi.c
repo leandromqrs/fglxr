@@ -359,7 +359,10 @@ void* KCL_ACPI_GetVfctBios(unsigned long *size)
 {
     struct acpi_table_header *hdr;
     acpi_size tbl_size ;
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,3)    
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,10,0)
+    tbl_size = hdr->length;
+    if (!ACPI_SUCCESS(acpi_get_table("VFCT", 1, &hdr)))
+#elif LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,3)    
     if (!ACPI_SUCCESS(acpi_get_table_with_size("VFCT", 1, &hdr, &tbl_size)))
 #else
     tbl_size = 0x7fffffff;
@@ -1029,7 +1032,10 @@ int ATI_API_CALL KCL_ACPI_ParseTable(char *id, KCL_ACPI_IntCallbackHandle handle
         return KCL_ACPI_ERROR; 
     }
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,3)    
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,10,0)
+    tbl_size = hdr->length;
+    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &hdr)))
+#elif LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,3)    
     if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &hdr, &tbl_size)))
 #else
     tbl_size = 0x7fffffff;

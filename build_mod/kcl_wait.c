@@ -43,6 +43,10 @@
 #include "kcl_config.h"
 #include "kcl_wait.h"
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,13,0)
+typedef wait_queue_entry_t wait_queue_t;
+#endif
+
 /** \brief Create wait object, init it and add to the kernel queue
  ** \param object_handle [in] Object handle
  ** \return Kernel wait handle on success, 0 otherwise

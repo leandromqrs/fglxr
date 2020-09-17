@@ -30,7 +30,10 @@
  *
  */
 
+#include <linux/cache.h>
+#include <linux/sched.h> // for task_struct in asm/current.h
 #include <linux/version.h>
+#include <asm/processor.h> // for mm_segment_t in asm/uaccess.h
 #include <asm/uaccess.h>
 
 #ifdef __x86_64__
