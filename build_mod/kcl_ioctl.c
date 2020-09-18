@@ -228,7 +228,11 @@ void* ATI_API_CALL KCL_IOCTL_AllocUserSpace32(long size)
     void __user *ret = COMPAT_ALLOC_USER_SPACE(size);
 
     /* prevent stack overflow */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
+    if (!access_ok(ret, size))
+#else
     if (!access_ok(VERIFY_WRITE, ret, size))
+#endif
         return NULL;
 
     return (void *)ret;

@@ -42,6 +42,10 @@
 #include "kcl_type.h"
 #include "kcl_str.h"
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 20, 0)
+#define strnicmp strncasecmp
+#endif
+
 /** \brief Fill memory with a constant byte
  *  \param s Pointer to memory
  *  \param c Initializing value

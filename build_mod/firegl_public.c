@@ -221,6 +221,10 @@
 
 // ============================================================
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,2,0)
+#define X87_FSW_ES (1 << 7)
+#endif
+
 // VM_SHM is deleted in 2.6.18 or higher kernels.
 #ifndef VM_SHM
 #define VM_SHM 0
@@ -1620,6 +1624,7 @@ int ATI_API_CALL KCL_SetPageCache(void* pt, int pages, int enable)
  */
 int ATI_API_CALL KCL_SetPageCache_Array(unsigned long *pt, int pages, int enable)
 {
+#if LINUX_VERSION_CODE <= KERNEL_VERSION(5,3,0)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,28)
     unsigned long *pPageList=NULL;
     unsigned int i, lowPageCount = 0;
@@ -1649,6 +1654,7 @@ int ATI_API_CALL KCL_SetPageCache_Array(unsigned long *pt, int pages, int enable
     {
         kfree(pPageList);
     }
+#endif
 #else               
     unsigned int i;
     int ret = 0;
@@ -3295,11 +3301,8 @@ int ATI_API_CALL KCL_LockUserPages(unsigned long vaddr, unsigned long* page_list
 {
     int ret;
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
-    down_read(&current->mm->mmap_lock);
-#else
+
     down_read(&current->mm->mmap_sem);
-#endif
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,10,0)
     ret = get_user_pages_remote(current, current->mm, vaddr, page_cnt, 1, (struct page **)page_list, NULL, NULL);
 #elif LINUX_VERSION_CODE >= KERNEL_VERSION(4,9,0)
@@ -3309,11 +3312,7 @@ int ATI_API_CALL KCL_LockUserPages(unsigned long vaddr, unsigned long* page_list
 #else
     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 1, 0, (struct page **)page_list, NULL);
 #endif
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
-    up_read(&current->mm->mmap_lock);
-#else
     up_read(&current->mm->mmap_sem);
-#endif
 
     return ret;
 }
@@ -3328,11 +3327,8 @@ int ATI_API_CALL KCL_LockUserPages(unsigned long vaddr, unsigned long* page_list
 int ATI_API_CALL KCL_LockReadOnlyUserPages(unsigned long vaddr, unsigned long* page_list, unsigned int page_cnt)
 {
     int ret;
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
-    down_read(&current->mm->mmap_lock);
-#else
+
     down_read(&current->mm->mmap_sem);
-#endif
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,10,0)
     ret = get_user_pages_remote(current, current->mm, vaddr, page_cnt, 0, (struct page **)page_list, NULL, NULL);
 #elif LINUX_VERSION_CODE >= KERNEL_VERSION(4,9,0)
@@ -3342,11 +3338,7 @@ int ATI_API_CALL KCL_LockReadOnlyUserPages(unsigned long vaddr, unsigned long* p
 #else
     ret = get_user_pages(current, current->mm, vaddr, page_cnt, 0, 0, (struct page **)page_list, NULL);
 #endif
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
-    up_read(&current->mm->mmap_lock);
-#else
     up_read(&current->mm->mmap_sem);
-#endif
 
     return ret;
 }
@@ -3475,8 +3467,12 @@ int ATI_API_CALL KCL_MEM_FlushCpuCaches(void)
 {
 #ifdef __SMP__
     /* write back invalidate all other CPUs (exported by kernel) */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,3,0)
+    KCL_SmpCallFunction(deferred_flush, NULL, 1, 0);
+#else
 	if (KCL_SmpCallFunction(deferred_flush, NULL, 1, 0) != 0)
 		panic("timed out waiting for the other CPUs!\n");
+#endif
 
     /* invalidate this CPU */
 #if defined(__i386__) || defined(__x86_64__)
@@ -4286,7 +4282,28 @@ static vm_nopage_ret_t ip_vm_gart_nopage(struct vm_area_struct* vma,
    return ret;
 #endif
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,11,0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,1,0)
+
+static vm_fault_t ip_vm_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_fault, vmf->vma, vmf);
+}
+static vm_fault_t ip_vm_shm_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_shm_fault, vmf->vma, vmf);
+}
+static vm_fault_t ip_vm_dma_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_dma_fault, vmf->vma, vmf);
+}
+static vm_fault_t ip_vm_kmap_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_kmap_fault, vmf->vma, vmf);
+}
+static vm_fault_t ip_vm_pcie_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_pcie_fault, vmf->vma, vmf);
+}
+static vm_fault_t ip_vm_gart_fault(struct vm_fault *vmf) {
+    TRACE_FAULT(do_vm_gart_fault, vmf->vma, vmf);
+}
+
+#elif LINUX_VERSION_CODE >= KERNEL_VERSION(4,11,0)
 
 static int ip_vm_fault(struct vm_fault *vmf) {
     TRACE_FAULT(do_vm_fault, vmf->vma, vmf);
@@ -4844,10 +4861,14 @@ static kcl_mem_pat_status_t ATI_API_CALL kcl_mem_pat_enable (unsigned int save_o
     if (kcl_mem_pat_get_wc_index (kcl_mem_pat_orig_val) < 0)
     {
 #ifdef CONFIG_SMP
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,3,0)
+        KCL_SmpCallFunction (kcl_mem_pat_setup, NULL, 0, 1);
+#else
         if (KCL_SmpCallFunction (kcl_mem_pat_setup, NULL, 0, 1) != 0)
         {
             return (KCL_MEM_PAT_DISABLED);
         }
+#endif
 #endif
         kcl_mem_pat_setup (NULL);
         kcl_mem_pat_status = KCL_MEM_PAT_ENABLED_BUILTIN;
@@ -4880,10 +4901,14 @@ static void ATI_API_CALL kcl_mem_pat_disable (void)
     if (kcl_mem_pat_status == KCL_MEM_PAT_ENABLED_BUILTIN)
     {
 #ifdef CONFIG_SMP
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,3,0)
+    KCL_SmpCallFunction (kcl_mem_pat_restore, NULL, 0, 1);
+#else
         if (KCL_SmpCallFunction (kcl_mem_pat_restore, NULL, 0, 1) != 0)
         {
             return;
         }
+#endif
 #endif
         kcl_mem_pat_restore (NULL);
         KCL_DEBUG_INFO("Disabling driver built-in PAT support\n");
@@ -6667,12 +6692,20 @@ static int KCL_fpu_save_init(struct task_struct *tsk)
      copy_fxregs_to_kernel(fpu);
 #endif
    } else {
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4,2,0)
 	 asm volatile("fnsave %[fx]; fwait"
                   : [fx] "=m" (fpu->state->fsave));
+#else
+     asm volatile("fnsave %[fx]; fwait"
+                  : [fx] "=m" (fpu->state.fsave));
+#endif
 	 return 0;
    }
-
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,2,0)
+   if (unlikely(fpu->state.fxsave.swd & X87_FSW_ES)) {
+#else
    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
+#endif
 	asm volatile("fnclex");
 	return 0;
    }

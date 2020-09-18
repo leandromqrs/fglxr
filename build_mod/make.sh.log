@@ -1,33 +1,32 @@
 AMD kernel module generator version 2.1
 .
 Active kernel:
-uname -a = Linux desktop 5.8.9-arch2-1 #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000 x86_64 GNU/Linux
+uname -a = Linux desktop 5.4.65-1-lts #1 SMP Sun, 13 Sep 2020 21:56:58 +0000 x86_64 GNU/Linux
 uname -s = Linux
 uname -m = x86_64
-uname -r = 5.8.9-arch2-1
-uname -v = #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000
+uname -r = 5.4.65-1-lts
+uname -v = #1 SMP Sun, 13 Sep 2020 21:56:58 +0000
 .
 Target kernel:
-uname -a = Linux desktop 5.8.9-arch2-1 #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000 x86_64 GNU/Linux
+uname -a = Linux desktop 5.4.65-1-lts #1 SMP Sun, 13 Sep 2020 21:56:58 +0000 x86_64 GNU/Linux
 uname -s = Linux
 uname -m = x86_64
-uname -r = 5.8.9-arch2-1
-uname -v = #1 SMP PREEMPT Sun, 13 Sep 2020 23:44:55 +0000
+uname -r = 5.4.65-1-lts
+uname -v = #1 SMP Sun, 13 Sep 2020 21:56:58 +0000
 .
-OsVersion says: SMP=1
 file /proc/kallsyms says: SMP=1
-file /lib/modules/5.8.9-arch2-1/build/include/generated/autoconf.h says: SMP=1
-file /lib/modules/5.8.9-arch2-1/build/include/generated/autoconf.h says: MODVERSIONS=
-file /lib/modules/5.8.9-arch2-1/build/arch/x86/include/asm/compat.h says: COMPAT_ALLOC_USER_SPACE=arch_compat_alloc_user_space
+file /lib/modules/5.4.65-1-lts/build/include/generated/autoconf.h says: SMP=1
+file /lib/modules/5.4.65-1-lts/build/include/generated/autoconf.h says: MODVERSIONS=
+file /lib/modules/5.4.65-1-lts/build/arch/x86/include/asm/compat.h says: COMPAT_ALLOC_USER_SPACE=arch_compat_alloc_user_space
 .
 doing Makefile based build for kernel 2.6.x and higher
-make -C /lib/modules/5.8.9-arch2-1/build M=/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x
-make[1]: Entrando no diretório '/usr/lib/modules/5.8.9-arch2-1/build'
+make -C /lib/modules/5.4.65-1-lts/build M=/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x
+make[1]: Entrando no diretório '/usr/lib/modules/5.4.65-1-lts/build'
 
   AR      /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o
 In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:41,
-                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:519:
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:523:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h: In function ‘FGLDRM__bufs_info’:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drmP.h:221:4: warning: macro expands to multiple statements [-Wmultistatement-macros]
   221 |    len += sprintf(&buf[len], fmt , ##arg);    \
@@ -35,136 +34,46 @@ In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6C
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:391:4: note: in expansion of macro ‘DRM_PROC_PRINT’
   391 |    DRM_PROC_PRINT("%2d %8d %5d %5d %5d %5d %5ld\n",
       |    ^~~~~~~~~~~~~~
-In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:519:
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:523:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:390:3: note: some parts of macro expansion are not guarded by this ‘if’ clause
   390 |   if (dma->bufs[i].buf_count)
       |   ^~
 In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:41,
-                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:519:
+                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:523:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drmP.h:221:4: warning: macro expands to multiple statements [-Wmultistatement-macros]
   221 |    len += sprintf(&buf[len], fmt , ##arg);    \
       |    ^~~
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:406:21: note: in expansion of macro ‘DRM_PROC_PRINT’
   406 |   if (i && !(i%32)) DRM_PROC_PRINT("\n");
       |                     ^~~~~~~~~~~~~~
-In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:519:
+In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:523:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:406:3: note: some parts of macro expansion are not guarded by this ‘if’ clause
   406 |   if (i && !(i%32)) DRM_PROC_PRINT("\n");
       |   ^~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_SetPageCache_Array’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1642:15: error: implicit declaration of function ‘set_memory_array_wb’; did you mean ‘set_pages_array_wb’? [-Werror=implicit-function-declaration]
- 1642 |         ret = set_memory_array_wb(pPageList, lowPageCount);
-      |               ^~~~~~~~~~~~~~~~~~~
-      |               set_pages_array_wb
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1646:15: error: implicit declaration of function ‘set_memory_array_uc’; did you mean ‘set_pages_array_uc’? [-Werror=implicit-function-declaration]
- 1646 |         ret = set_memory_array_uc(pPageList, lowPageCount);
-      |               ^~~~~~~~~~~~~~~~~~~
-      |               set_pages_array_uc
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_DelayInMicroSeconds’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1861:21: error: storage size of ‘tval’ isn’t known
- 1861 |     struct timespec tval;
-      |                     ^~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:1861:21: warning: unused variable ‘tval’ [-Wunused-variable]
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_MEM_FlushCpuCaches’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3469:58: error: void value not ignored as it ought to be
- 3469 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
-      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3478:6: note: in expansion of macro ‘KCL_SmpCallFunction’
- 3478 |  if (KCL_SmpCallFunction(deferred_flush, NULL, 1, 0) != 0)
-      |      ^~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: At top level:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4350:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4350 |     fault:   ip_vm_fault,
-      |              ^~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4350:14: note: (near initialization for ‘vm_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4361:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4361 |     fault:   ip_vm_shm_fault,
-      |              ^~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4361:14: note: (near initialization for ‘vm_shm_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4372:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4372 |     fault:   ip_vm_dma_fault,
-      |              ^~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4372:14: note: (near initialization for ‘vm_pci_bq_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4383:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4383 |     fault:   ip_vm_dma_fault,
-      |              ^~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4383:14: note: (near initialization for ‘vm_ctx_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4394:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4394 |     fault:   ip_vm_pcie_fault,
-      |              ^~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4394:14: note: (near initialization for ‘vm_pcie_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4405:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4405 |     fault:   ip_vm_kmap_fault,
-      |              ^~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4405:14: note: (near initialization for ‘vm_kmap_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4416:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4416 |     fault:   ip_vm_gart_fault,
-      |              ^~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4416:14: note: (near initialization for ‘vm_gart_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4428:14: error: initialization of ‘vm_fault_t (*)(struct vm_fault *)’ {aka ‘unsigned int (*)(struct vm_fault *)’} from incompatible pointer type ‘int (*)(struct vm_fault *)’ [-Werror=incompatible-pointer-types]
- 4428 |     fault:   ip_vm_fault,
-      |              ^~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4428:14: note: (near initialization for ‘vm_agp_bq_ops.fault’)
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_enable’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3469:58: error: void value not ignored as it ought to be
- 3469 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
-      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4847:13: note: in expansion of macro ‘KCL_SmpCallFunction’
- 4847 |         if (KCL_SmpCallFunction (kcl_mem_pat_setup, NULL, 0, 1) != 0)
-      |             ^~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘kcl_mem_pat_disable’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:3469:58: error: void value not ignored as it ought to be
- 3469 | #define KCL_SmpCallFunction(func, info, nonatomic, wait) smp_call_function(func, info, wait)
-      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:4883:13: note: in expansion of macro ‘KCL_SmpCallFunction’
- 4883 |         if (KCL_SmpCallFunction (kcl_mem_pat_restore, NULL, 0, 1) != 0)
-      |             ^~~~~~~~~~~~~~~~~~~
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_fpu_save_init’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6671:42: error: invalid type argument of ‘->’ (have ‘union fpregs_state’)
- 6671 |                   : [fx] "=m" (fpu->state->fsave));
-      |                                          ^~
-In file included from ./include/linux/export.h:43,
-                 from ./include/linux/linkage.h:7,
-                 from ./include/linux/kernel.h:8,
-                 from ./include/linux/list.h:9,
-                 from ./include/linux/module.h:12,
-                 from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:109:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6675:27: error: invalid type argument of ‘->’ (have ‘union fpregs_state’)
- 6675 |    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
-      |                           ^~
-./include/linux/compiler.h:78:42: note: in definition of macro ‘unlikely’
-   78 | # define unlikely(x) __builtin_expect(!!(x), 0)
-      |                                          ^
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6675:42: error: ‘X87_FSW_ES’ undeclared (first use in this function)
- 6675 |    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
-      |                                          ^~~~~~~~~~
-./include/linux/compiler.h:78:42: note: in definition of macro ‘unlikely’
-   78 | # define unlikely(x) __builtin_expect(!!(x), 0)
-      |                                          ^
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6675:42: note: each undeclared identifier is reported only once for each function it appears in
- 6675 |    if (unlikely(fpu->state->fxsave.swd & X87_FSW_ES)) {
-      |                                          ^~~~~~~~~~
-./include/linux/compiler.h:78:42: note: in definition of macro ‘unlikely’
-   78 | # define unlikely(x) __builtin_expect(!!(x), 0)
-      |                                          ^
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c: In function ‘KCL_create_proc_entry’:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6816:86: error: passing argument 4 of ‘proc_create_data’ from incompatible pointer type [-Werror=incompatible-pointer-types]
- 6816 |         ent = proc_create_data(name, access_mode, (struct proc_dir_entry *)root_dir, (struct file_operations*)fops, private_data);
-      |                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                                                                      |
-      |                                                                                      struct file_operations *
-In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:115:
-./include/linux/proc_fs.h:104:13: note: expected ‘const struct proc_ops *’ but argument is of type ‘struct file_operations *’
-  104 |             const struct proc_ops *,
-      |             ^~~~~~~~~~~~~~~~~~~~~~~
 At top level:
-/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6647:12: warning: ‘KCL_fpu_save_init’ defined but not used [-Wunused-function]
- 6647 | static int KCL_fpu_save_init(struct task_struct *tsk)
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6672:12: warning: ‘KCL_fpu_save_init’ defined but not used [-Wunused-function]
+ 6672 | static int KCL_fpu_save_init(struct task_struct *tsk)
       |            ^~~~~~~~~~~~~~~~~
-cc1: some warnings being treated as errors
-make[2]: *** [scripts/Makefile.build:281: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o] Erro 1
-make[1]: *** [Makefile:1756: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x] Erro 2
-make[1]: Saindo do diretório '/usr/lib/modules/5.8.9-arch2-1/build'
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.o
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.c:842:20: warning: ‘KCL_ACPI_Slot_No_Hotplug’ defined but not used [-Wunused-function]
+  842 | static acpi_status KCL_ACPI_Slot_No_Hotplug(KCL_ACPI_DevHandle handle, u32 lvl, void *data, void **rv)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.c: In function ‘KCL_ACPI_GetVfctBios’:
+/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.c:363:19: warning: ‘hdr’ is used uninitialized in this function [-Wuninitialized]
+  363 |     tbl_size = hdr->length;
+      |                   ^~
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_agp.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_ioctl.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_io.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_pci.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_str.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_iommu.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl.o
+  CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_wait.o
+make[2]: *** Sem regra para processar o alvo '/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/libfglrx_ip.a', necessário por '/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.o' .  Pare.
+make[1]: *** [Makefile:1729: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x] Erro 2
+make[1]: Saindo do diretório '/usr/lib/modules/5.4.65-1-lts/build'
 
 make: *** [Makefile:88: kmod_build] Erro 2
 build failed with return value 2
