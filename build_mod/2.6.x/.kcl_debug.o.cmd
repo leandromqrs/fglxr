@@ -18,7 +18,7 @@ deps_/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modu
     $(wildcard include/config/retpoline.h) \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
   include/uapi/asm-generic/errno-base.h \
-  include/generated/uapi/linux/version.h \
+  include/linux/version.h \
   include/linux/kernel.h \
     $(wildcard include/config/preempt/voluntary.h) \
     $(wildcard include/config/debug/atomic/sleep.h) \

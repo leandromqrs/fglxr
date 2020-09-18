@@ -40,7 +40,7 @@ deps_/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modu
   include/linux/compiler-gcc.h \
     $(wildcard include/config/retpoline.h) \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
-  include/generated/uapi/linux/version.h \
+  include/linux/version.h \
   arch/x86/include/asm/unistd.h \
     $(wildcard include/config/x86/32.h) \
   arch/x86/include/uapi/asm/unistd.h \

@@ -1009,7 +1009,7 @@ deps_/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modu
   arch/x86/include/asm/swiotlb.h \
   include/linux/swiotlb.h \
   include/linux/dma-contiguous.h \
-  include/generated/uapi/linux/version.h \
+  include/linux/version.h \
   include/linux/sched/signal.h \
     $(wildcard include/config/sched/autogroup.h) \
     $(wildcard include/config/bsd/process/acct.h) \

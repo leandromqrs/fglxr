@@ -14,6 +14,7 @@ uname -m = x86_64
 uname -r = 5.4.65-1-lts
 uname -v = #1 SMP Sun, 13 Sep 2020 21:56:58 +0000
 .
+OsVersion says: SMP=1
 file /proc/kallsyms says: SMP=1
 file /lib/modules/5.4.65-1-lts/build/include/generated/autoconf.h says: SMP=1
 file /lib/modules/5.4.65-1-lts/build/include/generated/autoconf.h says: MODVERSIONS=

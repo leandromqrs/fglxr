@@ -1864,7 +1864,11 @@ void ATI_API_CALL KCL_DelayInMicroSeconds(unsigned long usecs)
     unsigned long stop;
     unsigned long period;
     unsigned long wait_period;
+#   if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+    struct timespec64 tval;
+#   else
     struct timespec tval;
+#   endif
 
 #ifdef NDELAY_LIMIT
     // kernel provides delays with nano(=n) second accuracy
@@ -2374,11 +2378,7 @@ void* ATI_API_CALL KCL_MEM_Alloc(kcl_size_t size)
 
 void* ATI_API_CALL KCL_MEM_AllocAtomic(kcl_size_t size)
 {
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,8,0))
-    return __vmalloc(size, GFP_ATOMIC);
-#else
     return __vmalloc(size, GFP_ATOMIC, PAGE_KERNEL);
-#endif
 }
 
 void ATI_API_CALL KCL_MEM_Free(void* p)
