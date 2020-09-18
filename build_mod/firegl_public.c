@@ -299,7 +299,7 @@ module_param(firegl, charp, 0);
 #endif
 
 #ifdef MODULE_LICENSE
-MODULE_LICENSE("GPL/Proprietary. (C) 2002 - ATI Technologies, Starnberg, GERMANY");
+MODULE_LICENSE("GPL\0Proprietary. (C) 2002 - ATI Technologies, Starnberg, GERMANY");
 #endif
 #ifdef MODULE_DEVICE_TABLE
 MODULE_DEVICE_TABLE(pci, fglrx_pci_table);
