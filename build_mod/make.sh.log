@@ -21,11 +21,12 @@ file /lib/modules/5.4.65-1-lts/build/include/generated/autoconf.h says: MODVERSI
 file /lib/modules/5.4.65-1-lts/build/arch/x86/include/asm/compat.h says: COMPAT_ALLOC_USER_SPACE=arch_compat_alloc_user_space
 .
 doing Makefile based build for kernel 2.6.x and higher
-make -C /lib/modules/5.4.65-1-lts/build M=/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x
+make -C /lib/modules/5.4.65-1-lts/build M=/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x modules
 make[1]: Entrando no diretório '/usr/lib/modules/5.4.65-1-lts/build'
 
-  AR      /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
 In file included from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h:41,
                  from /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:523:
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/drm_proc.h: In function ‘FGLDRM__bufs_info’:
@@ -56,6 +57,8 @@ At top level:
  6672 | static int KCL_fpu_save_init(struct task_struct *tsk)
       |            ^~~~~~~~~~~~~~~~~
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
 /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.c:842:20: warning: ‘KCL_ACPI_Slot_No_Hotplug’ defined but not used [-Wunused-function]
   842 | static acpi_status KCL_ACPI_Slot_No_Hotplug(KCL_ACPI_DevHandle handle, u32 lvl, void *data, void **rv)
       |                    ^~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,17 +67,35 @@ At top level:
   363 |     tbl_size = hdr->length;
       |                   ^~
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_agp.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_ioctl.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_io.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_pci.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_str.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_iommu.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
   CC [M]  /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/kcl_wait.o
+<command-line>: warning: "COMPAT_ALLOC_USER_SPACE" re-definido
+<command-line>: note: essa é a localização da definição anterior
 make[2]: *** Sem regra para processar o alvo '/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/libfglrx_ip.a', necessário por '/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.o' .  Pare.
 make[1]: *** [Makefile:1729: /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x] Erro 2
 make[1]: Saindo do diretório '/usr/lib/modules/5.4.65-1-lts/build'
 
-make: *** [Makefile:88: kmod_build] Erro 2
+make: *** [Makefile:92: kmod_build] Erro 2
 build failed with return value 2

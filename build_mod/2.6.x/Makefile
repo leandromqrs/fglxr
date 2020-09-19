@@ -68,6 +68,7 @@ EXTRA_CFLAGS    += \
                 -DFGL_GART_RESERVED_SLOT \
                 -DFGL_LINUX253P1_VMA_API \
                 -DPAGE_ATTR_FIX=$(PAGE_ATTR_FIX) \
+                -DCOMPAT_ALLOC_USER_SPACE=$(COMPAT_ALLOC_USER_SPACE) \
 
 ifeq ($(KERNELRELEASE),)
 # on first call from remote location we get into this path
@@ -84,8 +85,11 @@ fglrx-cfiles    = ${fglrx-c-objs:.o=.c}
 
 # default:: kmod_build
 
+%.symvers:
+	@ln -s ../Module.symvers $@
+
 kmod_build:: $(fglrx-libs) $(fglrx-cfiles) $(fglrx-hdrs) $(drm-hdrs)
-	$(MAKE) -C $(KDIR) M=$(PWD)
+	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
 %.c:
 	@ln -s ../$@

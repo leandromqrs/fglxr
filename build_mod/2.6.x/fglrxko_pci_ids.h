@@ -1,1 +1,0 @@
-../fglrxko_pci_ids.h

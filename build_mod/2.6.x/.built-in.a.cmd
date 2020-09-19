@@ -1,1 +1,0 @@
-cmd_/home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a := rm -f /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a; ar cDPrST /home/leandromqrs/Documentos/AMD_PATCH/fglrx-install.rgX6Cj/common/lib/modules/fglrx/build_mod/2.6.x/built-in.a 

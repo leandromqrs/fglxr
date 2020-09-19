@@ -475,6 +475,8 @@ cd 2.6.x
 
 make clean
 
+ln -s ../Module.symvers Module.symvers
+
 echo 'This is a dummy file created to suppress this warning: could not find /lib/modules/fglrx/build_mod/2.6.x/.libfglrx_ip.a.cmd for /lib/modules/fglrx/build_mod/2.6.x/libfglrx_ip.a' > .lib${MODULE}_ip.a.cmd
 
 CFLAGS_MODULE="-DMODULE -DATI -DFGL -DPAGE_ATTR_FIX=$PAGE_ATTR_FIX -DCOMPAT_ALLOC_USER_SPACE=$COMPAT_ALLOC_USER_SPACE $def_smp $def_modversions"
